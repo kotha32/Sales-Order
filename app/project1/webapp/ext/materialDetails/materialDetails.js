@@ -94,7 +94,11 @@ sap.ui.define([
                             }),
                             new Column({
                                 header: new Text({ text: "Batch" })
+                            }),
+                            new Column({
+                                header: new Text({ text: "Stock Quantity" })
                             })
+
                         ],
                         items: materialDetailsArray.map(function(detail) {
                             return new ColumnListItem({
@@ -102,7 +106,8 @@ sap.ui.define([
                                     new Text({ text: detail.Material }),
                                     new Text({ text: detail.Plant }),
                                     new Text({ text: detail.StorageLocation }),
-                                    new Text({ text: detail.Batch })
+                                    new Text({ text: detail.Batch }),
+                                    new Text({ text: detail.MatlWrhsStkQtyInMatlBaseUnit })
                                 ]
                             });
                         })
