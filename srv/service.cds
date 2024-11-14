@@ -15,6 +15,8 @@ service SalesService {
             Batch: String(100);
             StorageLocation: String(100);
             MatlWrhsStkQtyInMatlBaseUnit: Decimal(10,3);
+            SDDocument: String(100);
+            SDDocumentItem: String(100);
         }
 };
 
@@ -39,7 +41,9 @@ service SalesService {
         Plant,
         Batch,
         StorageLocation,
-        MatlWrhsStkQtyInMatlBaseUnit
+        MatlWrhsStkQtyInMatlBaseUnit,
+        SDDocument,
+        SDDocumentItem,
 
     };
 }

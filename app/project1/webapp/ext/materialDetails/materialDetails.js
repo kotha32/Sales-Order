@@ -7,6 +7,7 @@
 // ], function(MessageToast, Dialog, Button, List, StandardListItem) {
 //     'use strict';
 
+
 //     return {
 //         materialDetails: function(oBindingContext, aSelectedContexts) {
 //             console.log(aSelectedContexts);
@@ -97,6 +98,12 @@ sap.ui.define([
                             }),
                             new Column({
                                 header: new Text({ text: "Stock Quantity" })
+                            }),
+                            new Column({
+                                header: new Text({ text: "SDDocument" })
+                            }),
+                            new Column({
+                                header: new Text({ text: "SDDocument Item" })
                             })
 
                         ],
@@ -107,7 +114,9 @@ sap.ui.define([
                                     new Text({ text: detail.Plant }),
                                     new Text({ text: detail.StorageLocation }),
                                     new Text({ text: detail.Batch }),
-                                    new Text({ text: detail.MatlWrhsStkQtyInMatlBaseUnit })
+                                    new Text({ text: detail.MatlWrhsStkQtyInMatlBaseUnit }),
+                                    new Text({ text: detail.SDDocument }),
+                                    new Text({ text: detail.SDDocumentItem })
                                 ]
                             });
                         })
@@ -120,6 +129,12 @@ sap.ui.define([
                         verticalScrolling: true,
                         content: [oTable],  
                         buttons: [
+                            new Button({
+                                text: 'Transfer',
+                                press: function () {
+                                    oDialog.close();
+                                }
+                            }),
                             new Button({
                                 text: 'Close',
                                 press: function () {
